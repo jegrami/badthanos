@@ -1,0 +1,124 @@
+
+openapi: 3.0.0
+info:
+  title: "Thanos Quotes REST API"
+  description: "An API for retrieving all Thanos's quotes from The Avengers series."
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+paths:
+  /quotes:
+    get:
+      operationId: "quotes.get_all_quotes"
+      tags: 
+        - "Quotes"
+      summary: "Get all Thanos quotes"
+      responses:
+        "200":
+          description: "All Thanos quotes from The Avengers"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Quote"
+        "500":
+          description: "Internal server error"
+    
+  /quotes/random/{limit}:
+    get:
+      operationId: "quotes.get_random_quote"
+      tags:
+        - "Quotes"
+      summary: "Get a given number of random Thanos quotes"
+      parameters:
+        - name: "limit"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+            minimum: 1
+      responses:
+        "200":
+          description: "Randomly selected Thanos quotes from The Avengers"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Quote"
+        "400":
+          description: "Invalid limit parameter"
+        "500":
+          description: "Internal server error"
+
+  /quotes/movie/{movie}:
+    get:
+      operationId: "quotes.get_quote_by_movie"
+      tags:
+        - "Quotes"
+      summary: "Get Thanos quotes by a given movie title"
+      parameters:
+        - name: "movie"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Thanos quotes from the specified movie"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Quote"
+        "404":
+          description: "Movie not found"
+        "500":
+          description: "Internal server error"
+  
+  /quotes/search/{keyword}:
+    get:
+      operationId: "quotes.search_quote_by_keyword"
+      tags:
+        - "Quotes"
+      summary: "Search for Thanos quotes by a given keyword"
+      parameters:
+        - name: "keyword"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Thanos quotes matching the specified keyword"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Quote"
+        "404":
+          description: "Keyword not found"
+        "500":
+          description: "Internal server error"
+
+components:
+  schemas:
+    Quote:
+      type: "object"
+      required:
+        - quote
+        - movie
+        - keyword
+      properties:
+        quote:
+          type: "string"
+        movie:
+          type: "string"
+        keyword:
+          type: "string"

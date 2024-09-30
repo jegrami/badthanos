@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Thanos The Mad Titan</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <script
+            src="{{ url_for('static', filename='js/index.js') }}"
+            type="module">
+        </script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="thanos-title">Thanos The Mad Titan</h1>
+            <h2 id="thanos-subtitle">Dark quotes from the intergalactic warlord</h2>
+
+            <div class="bio-container">
+                <h4 class="bio-heading">Profile</h4>
+                <p><strong>Name: </strong> Thanos</p>
+                <p><strong>Species: </strong>Eternal–Deviant hybrid</p>
+                <p><strong>Race: </strong> Titanian Eternal</p></p>
+                <p><strong>Birthplace: </strong>Titan</p>
+                <p><strong>Parents: </strong>Eternals A'Lars (a.k.a. Mentor) and Sui-San</p>
+                <p><strong>Titles: </strong> Warlord, Conqueror, Prince of Titan, Ruler of the Chitauri, Prime Eternal</p>
+                <p><strong>Aliases: </strong> Dione, The Mad Titan, Captain Genocide, Prune Chin, Death's Consort</p>
+                <p><strong>Abilities: </strong>Superhuman strength, speed, stamina, and agility; genius-level intellect, master tactician, skilled hand-to-hand combatant</p>
+                <p><strong>Origin story: </strong>Thanos was born on Titan (the sixth orbiting moon of Saturn) as the son of Mentor and Sui-San. An Eternal with Deviant genes, 
+                    Thanos embodys a lethal combination of unmatched strength, genius-level intelligence, and a grim determination to bring 
+                    'stability' to the universe by eliminating half of its population.
+                    His resume includes conquering planets, defeating gods, wipping out 50% of all living creatures, 
+                    and reducing the Avengers (Earth's mightiest heroes) to a pile of regrets.
+            </div>
+
+            <p id="lede">
+                Ready to witness some words of doom from
+                the universe's greatest supervillain?
+            </p>
+    
+
+            {% if config['DEBUG'] %}
+            <div class="debug-card">
+                {% include "_debug.html" %}
+            </div>
+        
+            {% endif %}
+        </div>
+        <div class="doc-link">
+            <p>Yo, developers, there's an API for this shit. Click the button below for the full documentation.</p>
+            <button>
+                <a href="/api/documentation">API Documentation</a>
+            </button>
+        </div>
+        <div class="footer-card">
+            {% include "_footer.html" %}
+        </div>
+        
+    </body>
+
+</html>

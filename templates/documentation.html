@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thanos API Documentation</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale 1.0" />
+        <link rel="stylesheet" href="/static/css/doc.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="title">Thanos API</h1>
+            <span class="subtitle">The baddest API on the internet</span>
+        </div>
+        <div class="doc-container">
+            <h2 id="doc-header">Reference Documentation</h2>
+            <h3>About this API</h3>
+            
+            <p>
+                First of all, I'm not a superhero movie freak, neither I'm I
+                a Marvel Cinematic Universe fanboy. What I am is a bloody ass developer. 
+            </p>
+            <p>
+                I stumbled upon some of the Avengers series recently (movies that came out like 6 years ago).
+                And I kinda liked every thing that baldheaded, ridge-chined, purple ass motherfucker Thanos said. So 
+                I made an API of literally all his lines. This is Thanos API, or TAPI (Lol).
+            </p>
+            <h3>Server Endpoint</h3>
+            <p>
+                The base url for TAPI is <a href="http://localhost:8000/api.">http://127.0.0.1:8000/api.</a>
+                But you probably already guessed it.
+            </p>
+
+            <h3>HTTP Methods</h3>
+            <p>
+                GET is the only HTTP method you'll ever need ... because how dare
+                you mortal attempt to modify the words of the dark lord of Titan
+            </p>
+            <h3>API Endpoints</h3>
+            <ul class="doc-list">
+                <li><strong>/quotes: </strong> Fetch all Thanos quotes from the database. Dont panick. It won't break your CPU. There are onlt about 100 of them or so.</li>
+                <li><strong>/quotes/random/{limit}: </strong> Get a specified number of random Thanos quotes.</li>
+                <li><strong>/quotes/movies/{movie_name}: </strong> Get quotes from a specific movie in the Avengers series.</li>
+                <li><strong>/quotes/search/{keyword}: </strong> Each quote has associated keywords. This endpoint allows you to fetch quotes by keywords. A list of all avaialable keywords is given below.</li>
+            </ul>
+            <h3>Request and Response Examples</h3>
+            <p>How to get started? Just make a fucking GET request to http://localhost:8000/api. Use the avaialble endpoints to format the output you get.</p>
+            <p>
+                Honestly, I dont see how this API will be useful for your app or whatever
+                the fuck you're cooking. But if you want to play around with it, there are only
+                a few endpoints and parameters you need to know.
+            </p>
+
+            <p>Down below (duh) are some request and response examples for all them: </p>
+            <p><strong>GET /quotes</strong></p>
+            <pre>
+                <code>
+                [
+                    {
+                        "id": 1,
+                        "keywords": "fate",
+                        "movie": "Avengers: Endgame",
+                        "quote": "I am inevitable."
+                    },
+                    {
+                        "id": 2,
+                        "keywords": "balance",
+                        "movie": "Avengers: Infinity War",
+                        "quote": "Look. Pretty, isn't it? Perfectly balanced, as all things should be. Too much to one side or the other . . . Here. You try. Uh-uh, concentrate. There! You've got it."
+                    },
+                    {
+                        "id": 3,
+                        "keywords": "sacrifice",
+                        "movie": "Avengers: Infinity War",
+                        "quote": "I finally rest and watch the sun rise on a grateful universe. Th hardest choices require the strongest wills."
+                    }
+
+                  
+                    bla bla bla
+                ]
+                </code>
+            </pre>
+
+            <p><strong>GET /quotes/random/2</strong></p>
+            <pre>
+                <code>
+                    [
+    {
+        "id": 3,
+        "keywords": "sacrifice",
+        "movie": "Avengers: Infinity War",
+        "quote": "I finally rest and watch the sun rise on a grateful universe. The hardest choices require the strongest wills."
+    },
+    {
+        "id": 1,
+        "keywords": "fate",
+        "movie": "Avengers: Endgame",
+        "quote": "I am inevitable."
+    }
+]
+                </code>
+            </pre>
+
+            <p><strong>GET /quotes/movie/endgame</strong></p>
+            <pre>
+                <code>
+                    [
+    {
+        "id": 1,
+        "keywords": "fate",
+        "movie": "Avengers: Endgame",
+        "quote": "I am inevitable."
+    },
+    {
+        "id": 4,
+        "keywords": "correction",
+        "movie": "Avengers: Endgame",
+        "quote": "The universe required correction. After that, the stones served no purpose beyond temptation."
+    }
+]
+                </code>
+            </pre>
+
+            <p><strong>GET /quotes/search/sacrifice</strong></p>
+            <pre>
+                <code>
+                    {
+                        "id": 3,
+                        "keywords": "sacrifice",
+                        "movie": "Avengers: Infinity War",
+                        "quote": "I finally rest and watch the sun rise on a grateful universe. The hardest choices require the strongest wills."
+                    }
+                </code>
+            </pre>
+
+                <div class="keywords">
+                    <table>
+                        <theah>
+                            <tr>
+                                <th scope="row" colspan="4">valid keywords</th>
+                            </tr>
+                        </theah>
+                        <tbody>
+                            <tr>
+                                <td>fate</td>
+                                <td>balance</td>
+                                <td>sacrifice</td>
+                                <td>correction</td>
+                            </tr>
+                            <tr>
+                                <td>inevitable</td>
+                                <td>nebula</td>
+                                <td>tesseract</td>
+                                <td>gamora</td>
+                            </tr>
+                            <tr>
+                                <td>earth</td>
+                                <td>grateful</td>
+                                <td>loss</td>
+                                <td>time</td>
+                            </tr>
+                            <tr>
+                                <td>knowledge</td>
+                                <td>blood</td>
+                                <td>conquest</td>
+                                <td>genocide</td>
+                            </tr>
+                            <tr>
+                                <td>infinity stones</td>
+                                <td>titan</td>
+                                <td>thanos</td>
+                                <td>save</td>
+                            </tr>
+                            <tr>
+                                <td>surprise</td>
+                                <td>reconsider</td>
+                                <td>mistake</td>
+                                <td>cost</td>
+                            </tr>
+                            <tr>
+                                <td>fire</td>
+                                <td>asgardian</td>
+                                <td>earth</td>
+                                <td>grateful</td>
+                            </tr>
+                            <tr>
+                                <td>failure</td>
+                                <td>undying</td>
+                                <td>resurrection</td>
+                                <td>stark</td>
+                            </tr>
+                            <tr>
+                                <td>universe</td>
+                                <td>eliminate</td>
+                                <td>wizard</td>
+                                <td>maw</td>
+                            </tr>
+                            <tr>
+                                <td>avengers</td>
+                                <td>wanda</td>
+                                <td>lie</td>
+                                <td>disappoint</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+                </div>
+            <p>Want more functionality? Fork the code and add it yourself!</p>
+            
+
+        </div>
+        <div class="footer-card"></div>
+            {% include "_footer.html" %}
+        </div>
+    </body>
+</html>

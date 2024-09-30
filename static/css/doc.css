@@ -1,0 +1,136 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/static/images/real-thanos.jpg');
+    background-size: contain;
+    background-position: top;  
+    display: grid;  
+    text-align: center;  
+    font-size: 1.2em;       
+}
+
+.doc-container {
+    background-color: #ffff;
+    padding: 1.5em;
+    
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 10em auto;
+    border-radius: 10px;
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+
+.header {
+    color: yellowgreen;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 50px;
+}
+
+.subtitle {
+    font-size: 25px;
+}
+
+.doc-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: darkgreen;
+    text-align: center;
+}
+
+.doc-container h3 {
+    font-size: 1.2em;
+    margin: 0.5em;
+    color: darkgreen; 
+    padding: 0.5em;  
+    
+
+}
+
+.doc-container p {
+    margin: 0.5em;
+}
+
+.doc-container strong {
+    color: darkgreen;
+}
+
+.doc-container li {
+    padding: 0.3em;
+
+}
+
+pre {
+    white-space: pre;
+    background-color: rgb(240, 240, 240);
+    padding: 1em;
+    font-size: 13px;
+    overflow: auto;
+    border: 1px solid rgb(221, 221, 221);
+    color: rgb(51, 51, 51);
+    max-height: 400px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    
+}
+
+table {
+    border: 2px solid rgb(140, 140, 140);
+    padding: 1px;
+    margin: 50px;
+}
+
+th,
+td {
+    border: 1px solid rgb(100, 100, 100);
+}
+
+footer {
+    background-color: #444;
+    padding: 20px 0;
+    
+ }
+
+ .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .footer-info a {
+    color: #ffff;
+    text-decoration: none;
+    margin: 0 10px;
+ }
+
+ .footer-info a:hover {
+    text-decoration: underline;
+ }
+
+ .footer-contact {
+    margin: 10px 0;
+    background-color: #fff;
+ }
+
+.footer-social {
+    margin: 10px 0;
+}
+
+ .footer-social a {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 0 7px;
+ }
+
+ .footer-social a:hover {
+    color: #00acee;
+ }

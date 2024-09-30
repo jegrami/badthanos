@@ -1,0 +1,185 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #00000099;
+    --accent-color: yellowgreen;
+
+}
+
+body {
+    background-image: url('/static/images/thanos-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: var(--main-color);
+    display: grid;  
+    text-align: center;  
+    font-size: 1.3em;  
+    
+}
+
+#thanos-title {
+    font-size: 50px;
+    
+}
+
+#thanos-subtitle {
+    font-size: 20px;
+
+}
+
+.container {
+    background-color: var(--bg-color);
+    color: greenyellow;
+    padding: 1.5em;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+    
+}
+
+.bio-container {
+    background-color: #ffff;
+    color: black;
+    padding: 1.2em;
+    border-radius: 12px;
+    margin: 1em 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    max-width: 600px;
+    margin: 1em auto;
+}
+
+.bio-container h4 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: darkgreen;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.bio-container p {
+    margin: 0.5em 0;
+}
+
+.bio-container strong {
+    color: darkgreen;
+}
+  
+pre {
+    white-space: pre-wrap;
+    background-color: rgb(30, 30, 30);
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+#quote-block {
+    background-color: #2e2e2e;
+    border-left: 5px solid #57a6ff;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ #quote-text {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 0.5em;
+ }
+
+ #quote-movie {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+ }
+
+ .debug-form input,
+ .debug-form button {
+    padding: 0.5em 1.5em;
+    margin: 0.5em 0;
+    border: 1px solid #444;
+    font-size:  0.8em;
+ }
+
+ .debug-form button {
+    background-color: var(--accent-color);
+    color: black;
+    transition: background-color 0.3 ease;
+ }
+
+ .debug-form button:hover {
+    background-color: #4596e6;
+ }
+
+ .doc-link {
+    font-size: x-large;
+    padding: 0.5em;
+    color: rgb(174, 225, 70);
+    background-color: rgb(100, 100, 100);
+    margin-top: 0;
+    margin-bottom: 0.4em;
+ }
+
+ .doc-link button {
+    background-color: #fff;
+    color: black;
+    padding: 0.8em;
+    transition: background-color 0.3 ease;
+ }
+
+ .doc-link button:hover {
+    background-color: #4596e6;
+ }
+
+
+ footer {
+    background-color: #444;
+    padding: 20px 0;
+    
+ }
+
+ .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .footer-info a {
+    color: #ffff;
+    text-decoration: none;
+    margin: 0 10px;
+ }
+
+ .footer-info a:hover {
+    text-decoration: underline;
+ }
+
+ .footer-contact {
+    margin: 10px 0;
+    background-color: #fff;
+ }
+
+.footer-social {
+    margin: 10px 0;
+}
+
+ .footer-social a {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 0 7px;
+ }
+
+ .footer-social a:hover {
+    color: #00acee;
+ }
